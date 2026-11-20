@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+<head><meta charset="utf-8"><title>Redirecting…</title>
+<script>
+// GitHub Pages has no SPA fallback: a deep link (e.g. /calendar) lands
+// here. Stash the path the app should open and go back to the app root;
+// the root page restores it before the app boots.
+(function () {
+  var base = '/hackenstein-katie-preview';
+  var path = location.pathname;
+  if (path.indexOf(base) === 0) path = path.slice(base.length);
+  if (!path || path === '/') path = '/chat';
+  try { sessionStorage.setItem('hackenstein-redirect', path); } catch (e) {}
+  location.replace(base + '/');
+})();
+</script>
+</head>
+<body>Redirecting…</body>
+</html>
